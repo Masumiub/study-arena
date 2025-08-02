@@ -34,7 +34,9 @@ export default function Assignmentspage() {
         document.getElementById('assignment_modal').showModal()
     }
 
-    if (loading) return <p className="text-center">Loading assignments...</p>
+    if (loading) return <div className="flex justify-center items-center min-h-[80vh]">
+        <span className="loading loading-spinner loading-lg text-primary"></span>
+    </div>
 
 
     return (
@@ -47,7 +49,7 @@ export default function Assignmentspage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-20">
                         {assignments.map((assignment) => (
                             <div key={assignment._id} className="p-4 rounded-2xl shadow-lg">
-                                <Image src={Img} alt="Img"  className='w-full p-8'/>
+                                <Image src={Img} alt="Img" className='w-full p-8' />
                                 <h2 className="text-xl font-semibold">{assignment.title}</h2>
 
                                 <button className="btn btn-xs btn-primary btn-outline rounded-full my-3">{assignment.category}</button>

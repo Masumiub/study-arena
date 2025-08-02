@@ -23,7 +23,7 @@ const Features = () => {
   return (
     <section className="py-16 px-3  my-20 rounded-2xl">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-2">Core Features</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-2">Core Features</h2>
         <p className="text-gray-600 text-lg">
           What makes Study Arena a unique learning platform.
         </p>
