@@ -3,6 +3,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { signInUser } from '@/lib/auth'
+import Lottie from "lottie-react";
+import Img from '../../../public/assets/Animation - login.json'
+
 
 export default function Login() {
     const [form, setForm] = useState({ email: '', password: '' })
@@ -19,20 +22,31 @@ export default function Login() {
     }
 
     return (
-        <div className="w-full xl:w-1/2 mx-auto p-3">
-            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-                <form onSubmit={handleSubmit}>
-                    <legend className="text-center text-4xl font-bold">Login</legend>
+        <div className='w-full md:w-6/12 mx-auto bg-linear-to-r from-cyan-500 to-blue-500 rounded-2xl mt-5'>
 
-                    <label className="label mt-3">Email</label> <br />
-                    <input placeholder="Email" type="email" required onChange={e => setForm({ ...form, email: e.target.value })} className='input w-full' />
-                    <br></br>
-                    <label className="label mt-3">Password</label> <br />
-                    <input placeholder="Password" type="password" required onChange={e => setForm({ ...form, password: e.target.value })} className='input w-full' />
-                    <br />
-                    <button type="submit" className="btn btn-primary mt-4  rounded-full w-full">Login</button>
-                </form>
-            </fieldset>
+            <div className="flex flex-col xl:flex-row items-center mb-20 py-25 px-10">
+
+                <div className="w-full xl:w-1/2 mx-auto p-3">
+                    <fieldset className="fieldset bg-base-200 rounded-box  p-4">
+                        <form onSubmit={handleSubmit}>
+                            <legend className="text-center text-4xl font-bold">Login</legend>
+
+                            <label className="label mt-3">Email</label> <br />
+                            <input placeholder="Email" type="email" required onChange={e => setForm({ ...form, email: e.target.value })} className='input w-full' />
+                            <br></br>
+                            <label className="label mt-3">Password</label> <br />
+                            <input placeholder="Password" type="password" required onChange={e => setForm({ ...form, password: e.target.value })} className='input w-full' />
+                            <br />
+                            <button type="submit" className="btn btn-primary mt-4  rounded-full w-full">Login</button>
+                        </form>
+                    </fieldset>
+                </div>
+
+                <div className='w-full xl:w-1/2 mx-auto'>
+                    <Lottie className="w-full mx-auto" animationData={Img} loop={true} ></Lottie>
+                </div>
+
+            </div>
         </div>
     )
 }

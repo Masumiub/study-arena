@@ -1,5 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import Banner from '../../public/assets/hero-banner2.png'
+
 
 const Header = () => {
   return (
@@ -22,11 +25,11 @@ const Header = () => {
 
         {/* Right Column (Image) */}
         <div className="flex-1">
-          {/* <img
-            src="/study-illustration.svg"
+          <Image
+            src={Banner}
             alt="Study Illustration"
-            className="w-full max-w-md mx-auto"
-          /> */}
+            className="w-full"
+          />
         </div>
       </div>
     </header>
