@@ -22,7 +22,7 @@ export default function Login() {
     }
 
     return (
-        <div className='w-full md:w-6/12 mx-auto bg-linear-to-r from-cyan-500 to-blue-500 rounded-2xl mt-5'>
+        <div className='w-full md:w-8/12 mx-auto bg-linear-to-r from-cyan-500 to-blue-500 rounded-2xl mt-5'>
 
             <div className="flex flex-col xl:flex-row items-center mb-20 py-25 px-10">
 
