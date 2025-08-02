@@ -28,25 +28,27 @@ export default function Register() {
       <div className="flex flex-col xl:flex-row items-center mb-20 py-25 px-10">
         <div className="w-full xl:w-1/2 mx-auto p-3">
 
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
             <form onSubmit={handleSubmit}>
-              <h1 className='text-4xl font-bold my-5'>Register</h1>
-              <label className="label mt-2">Name</label>
-              <input placeholder="Name" onChange={(e) => setForm({ ...form, name: e.target.value })} className="input" />
+              <h1 className='text-4xl font-bold my-5 text-center'>Register</h1>
 
-              <label className="label mt-2">Email</label>
-              <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} className="input" />
+              <label className="label mt-2">Name</label> <br />
+              <input placeholder="Name" onChange={(e) => setForm({ ...form, name: e.target.value })} className="input w-full" /> <br />
 
-              <label className="label mt-2">Password</label>
-              <input placeholder="Password" type="password" onChange={(e) => setForm({ ...form, password: e.target.value })} className="input" />
+              <label className="label mt-2">Email</label> <br />
+              <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} className="input w-full" /> <br />
 
-              <label className="label mt-2">Select a Role</label>
-              <select onChange={(e) => setForm({ ...form, role: e.target.value })} className="select">
+              <label className="label mt-2">Password</label> <br />
+              <input placeholder="Password" type="password" onChange={(e) => setForm({ ...form, password: e.target.value })} className="input w-full" /> <br />
+
+              <label className="label mt-2">Select a Role</label> <br />
+              <select onChange={(e) => setForm({ ...form, role: e.target.value })} className="select w-full">
                 <option value="student">Student</option>
                 <option value="instructor">Instructor</option>
               </select>
 
-              <button type="submit" className='btn mt-6 w-full'>Register</button>
+              <button type="submit" className='btn mt-6 w-full btn-primary rounded-full'>Register</button>
+
             </form>
           </fieldset>
         </div>

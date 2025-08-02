@@ -2,6 +2,9 @@
 import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import axios from 'axios'
+import Img from '../../../public/assets/hero-banner.png'
+import Image from 'next/image'
+
 
 export default function Assignmentspage() {
     const [selectedAssignment, setSelectedAssignment] = useState(null)
@@ -44,9 +47,10 @@ export default function Assignmentspage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-20">
                         {assignments.map((assignment) => (
                             <div key={assignment._id} className="p-4 rounded-2xl shadow-lg">
+                                <Image src={Img} alt="Img"  className='w-full p-8'/>
                                 <h2 className="text-xl font-semibold">{assignment.title}</h2>
 
-                                <p className="text-gray-700">{assignment.category}</p>
+                                <button className="btn btn-xs btn-primary btn-outline rounded-full my-3">{assignment.category}</button>
 
                                 <p className="text-gray-700">{assignment.description}</p>
 
@@ -55,12 +59,23 @@ export default function Assignmentspage() {
                                 </p>
 
                                 <div className='mt-5'>
-                                    <button
-                                        className='btn btn-primary btn-sm rounded-lg'
-                                        onClick={() => handleOpenModal(assignment)}
-                                    >
-                                        Take Assignment
-                                    </button>
+                                    {session?.user ? (
+                                        <button
+                                            className='btn btn-primary btn-sm rounded-lg'
+                                            onClick={() => handleOpenModal(assignment)}
+                                        >
+                                            Take Assignment
+                                        </button>
+                                    ) : (
+                                        <button
+                                            className='btn btn-outline btn-sm rounded-lg'
+                                            onClick={() => {
+                                                window.location.href = '/login'
+                                            }}
+                                        >
+                                            Login to Submit
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         ))}

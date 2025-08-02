@@ -10,7 +10,7 @@ export default function Navbar() {
 
 
     return (
-        <div className="navbar bg-base-100 shadow-sm w-full md:w-10/12 mx-auto rounded-2xl">
+        <div className="navbar bg-base-100 shadow-2xl w-full md:w-10/12 mx-auto rounded-2xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,6 +23,7 @@ export default function Navbar() {
                         <li>
                             <Link href='/Assignments'>Assignments</Link>
                         </li>
+                        
                         {
                             session?.user?.role == 'instructor' && (
                                 <>
@@ -32,21 +33,40 @@ export default function Navbar() {
                             )
 
                         }
+
+                        {
+                            session?.user?.role == 'student' && (
+                                <>
+                                    <li><Link href='/MySubmissions'>My Submissions</Link></li>
+                                </>
+                            )
+
+                        }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">StudyArena</a>
+                <Link href='/' className="text-2xl font-bold ml-2">StudyArena</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link href='/'>Home</Link></li>
                     <li><Link href='/Assignments'>Assignments</Link>
                     </li>
+                    
 
                     {
                         session?.user?.role == 'instructor' && (
                             <>
                                 <li><Link href='/CreateAssignment'>Create Assignment</Link></li>
                                 <li><Link href='/Submissions'>Submissions</Link></li>
+                            </>
+                        )
+
+                    }
+
+                    {
+                        session?.user?.role == 'student' && (
+                            <>
+                                <li><Link href='/MySubmissions'>My Submissions</Link></li>
                             </>
                         )
 

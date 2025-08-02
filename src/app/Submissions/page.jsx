@@ -80,7 +80,7 @@ export default function SubmissionsPage() {
                                            setStatus('accepted')
                                             document.getElementById('evaluate_modal').showModal()
                                         }}
-                                        className="btn btn-sm btn-info"
+                                        className="btn btn-sm btn-info rounded-lg text-white"
                                     >
                                         Evaluate
                                     </button>
@@ -114,16 +114,16 @@ export default function SubmissionsPage() {
                             <select
                                 value={status}
                                 onChange={(e) => setStatus(e.target.value)}
-                                className="border rounded px-2 py-1"
+                                className="border rounded px-2 py-1 select w-full"
                             >
                                 <option value="accepted">Accepted</option>
                                 <option value="rejected">Rejected</option>
                             </select>
 
                             <div className="modal-action">
-                                <button onClick={handleEvaluate} className="btn btn-success">Submit Evaluation</button>
+                                <button onClick={handleEvaluate} className="btn btn-success rounded-lg">Submit Evaluation</button>
                                 <button
-                                    className="btn"
+                                    className="btn rounded-lg"
                                     onClick={() => {
                                         document.getElementById('evaluate_modal').close()
                                         setSelected(null)
