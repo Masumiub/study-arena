@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs'
 import { registerUser } from '@/lib/auth'
 import Lottie from 'lottie-react';
 import Img from '../../../public/assets/Animation - signup.json'
+import Link from 'next/link'
 
 
 export default function Register() {
@@ -50,6 +51,9 @@ export default function Register() {
               <button type="submit" className='btn mt-6 w-full btn-primary rounded-full'>Register</button>
 
             </form>
+            <div className='my-5 text-center'>
+              <p>Already have an account? <Link href='/login' className='text-blue-500'>Login</Link></p>
+            </div>
           </fieldset>
         </div>
 

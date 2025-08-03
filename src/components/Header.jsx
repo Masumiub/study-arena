@@ -6,18 +6,18 @@ import Banner from '../../public/assets/hero-banner2.png'
 
 const Header = () => {
   return (
-    <header className="py-30 bg-gradient-to-t from-base-300 to-base-100 rounded-2xl px-3 my-5">
+    <header className="py-30 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl px-8 my-5 text-white">
       <div className="flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left Column */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-5xl font-bold  mb-4">
             Welcome to Study Arena!
           </h1>
-          <p className="  mb-6">
+          <p className="text-sm mb-6">
             Empower your learning with curated resources and a passionate community.  It aims to equip individuals with knowledge, skills, and critical thinking abilities to navigate life effectively and contribute to society. 
           </p>
           <Link href="/login">
-            <button className="btn btn-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+            <button className="btn btn-lg btn-primary rounded-xl">
               Join Now
             </button>
           </Link>
