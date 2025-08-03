@@ -20,6 +20,8 @@ export default function StatsPage() {
                     { name: 'Rejected', value: result.rejected },
                 ]
                 setData(pieData)
+                //console.log(pieData)
+
             } catch (error) {
                 console.error('Failed to fetch stats', error)
             } finally {
@@ -30,6 +32,7 @@ export default function StatsPage() {
         fetchStats()
     }, [])
 
+//console.log(data[0].name, data[0].value)
 
     if (loading) return <div className="flex justify-center items-center min-h-[80vh]">
         <span className="loading loading-spinner loading-lg text-primary"></span>
@@ -37,9 +40,21 @@ export default function StatsPage() {
 
 
     return (
-        <div className="w-full mx-auto p-4 mb-20">
+        <div className="w-full mx-auto p-4 mb-20 md:w-10/12">
             <h2 className="text-5xl font-semibold my-20 text-center">Assignment Submission Status</h2>
-            <div style={{ width: '100%', height: 400 }}>
+
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+            {
+                data.map((pie, idx) =>(
+                    <div key={idx} className='flex items-center justify-between bg-base-200 rounded-2xl py-10 px-5 shadow-lg'>
+                        <h1 className='text-3xl font-bold'>{pie.name}</h1>
+                        <h1  className='text-3xl font-bold'>{pie.value}</h1>
+                    </div>
+                ))
+            }
+            </div>
+
+            <div style={{ width: '100%', height: 400 }} className='mt-10'>
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <Pie

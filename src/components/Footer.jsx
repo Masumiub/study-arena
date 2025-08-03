@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
+import { FaGoogle } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -10,23 +13,32 @@ export default function Footer() {
                     <p>
                         Providing study materials since 1992
                     </p>
+
+                    <div>
+                        <p>Follow us: </p>
+                        <div className='flex gap-3'>
+                            <FaGoogle size={15}/>
+                            <FaFacebook size={15}/>
+                            <FaLinkedinIn size={15}/>
+                        </div>
+                    </div>
                 </aside>
                 <nav>
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    
+                    <Link href='/' className="link link-hover">Home</Link>
+                    <a className="link link-hover">Assignments</a>
+                    <a className="link link-hover">Create</a>
+                    <a className="link link-hover">Submissions</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Company</h6>
+                   
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
                     <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <a className="link link-hover">Blogs</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Legal</h6>
+                   
                     <a className="link link-hover">Terms of use</a>
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
