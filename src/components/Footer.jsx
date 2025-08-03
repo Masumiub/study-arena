@@ -1,17 +1,21 @@
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import logo from '../../public/assets/logo.png'
+
 
 export default function Footer() {
     return (
         <div>
             <footer className="footer sm:footer-horizontal bg-base-200 text-base-content px-10 py-20 rounded-t-2xl">
                 <aside>
+                    <Image src={logo} className='w-14' alt='logo'></Image>
                     <Link href='/' className='text-2xl font-bold'>StudyArena</Link>
                     <p>
-                        Providing study materials since 1992
+                        Empower your learning with curated resources <br /> and a passionate community.
                     </p>
 
                     <div>

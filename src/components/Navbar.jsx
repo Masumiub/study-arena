@@ -3,7 +3,8 @@ import Link from 'next/link'
 import React from 'react'
 import { signOutUser } from '@/lib/auth'
 import { useSession } from 'next-auth/react'
-
+import Image from 'next/image'
+import logo from '../../public/assets/logo.png'
 
 export default function Navbar() {
     const { data: session, status } = useSession()
@@ -45,6 +46,7 @@ export default function Navbar() {
                         }
                     </ul>
                 </div>
+                <Image src={logo} className='w-14' alt='logo'></Image>
                 <Link href='/' className="text-2xl font-bold ml-2">StudyArena</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
