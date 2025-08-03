@@ -1,4 +1,4 @@
-# 🎓 Assignment Submission Platform
+# 🎓 StudyArena - Assignment Submission Platform
 
 An instructor-student platform for managing and evaluating assignments. Built with Next.js 15 (App Router), MongoDB, Tailwind CSS, and modern best practices.
 
