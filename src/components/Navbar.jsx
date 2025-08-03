@@ -29,6 +29,7 @@ export default function Navbar() {
                                 <>
                                     <li><Link href='/CreateAssignment'>Create Assignment</Link></li>
                                     <li><Link href='/Submissions'>Submissions</Link></li>
+                                     <li><Link href='/Stats'>Stats</Link></li>
                                 </>
                             )
 
@@ -58,6 +59,7 @@ export default function Navbar() {
                             <>
                                 <li><Link href='/CreateAssignment'>Create Assignment</Link></li>
                                 <li><Link href='/Submissions'>Submissions</Link></li>
+                                <li><Link href='/Stats'>Stats</Link></li>
                             </>
                         )
 
